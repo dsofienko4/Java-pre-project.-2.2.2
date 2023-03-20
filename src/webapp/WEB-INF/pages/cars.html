@@ -1,30 +1,26 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>Cars</title>
-  <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.1.0/css/bootstrap.min.css}" />
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Cars</title>
+
 <body>
-<div class="container">
-  <h1>Cars</h1>
-  <table class="table">
+<table class="table table-dark">
     <thead>
     <tr>
-      <th>Make</th>
-      <th>Model</th>
-      <th>Year</th>
+        <th scope="col">Model</th>
+        <th scope="col">Power</th>
+        <th scope="col">Color</th>
     </tr>
     </thead>
     <tbody>
-    <tr th:each="car : ${cars}">
-      <td th:text="${car.make}"></td>
-      <td th:text="${car.model}"></td>
-      <td th:text="${car.year}"></td>
+    <tr th:each="car: ${cars}">
+        <td th:text="${car.model}"/>
+        <td th:text="${car.power}"/>
+        <td th:text="${car.color}"/>
     </tr>
     </tbody>
-  </table>
-</div>
-<script th:src="@{/webjars/bootstrap/5.1.0/js/bootstrap.min.js}"></script>
+</table>
 </body>
 </html>
